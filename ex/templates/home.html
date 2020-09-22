@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title>LikeLion</title>
+</head>
+
+<body>
+    {% load static %}
+    {% for star in stars.all %}
+    <div style="border: 1px solid black; text-align: center;">
+        <table style="display: inline;">
+            <tbody>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <img src="{{ star.photo.url }}" style="width: 100px; height: 120px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <a href="{% url 'detail' star.id %}">{{ star.name }}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        출생
+                    </td>
+                    <td>
+                        {{ star.birth }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        직업
+                    </td>
+                    <td>
+                        {{ star.job }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        데뷔
+                    </td>
+                    <td>
+                        {{ star.debut }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        학력
+                    </td>
+                    <td>
+                        {{ star.level }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>{% endfor %}
+    
+</body>
+
+</html>
